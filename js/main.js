@@ -1,16 +1,12 @@
-// js/main.js
-
 document.addEventListener("DOMContentLoaded", () => {
     initPortfolio();
+    initThemeToggle();
 });
 
- /* Initializes and populates the portfolio with data from data.js */
 function initPortfolio() {
-    // 1. Displays Profile Info
     document.getElementById("hero-name").textContent = portfolioData.profile.name;
     document.getElementById("hero-title").textContent = portfolioData.profile.title;
 
-    // 2. Displays Skills List
     const skillsList = document.getElementById("skills-list");
     portfolioData.skills.forEach(skill => {
         const li = document.createElement("li");
@@ -18,7 +14,6 @@ function initPortfolio() {
         skillsList.appendChild(li);
     });
 
-    // 3. Displays Projects Grid
     const projectsGrid = document.getElementById("projects-grid");
     portfolioData.projects.forEach(project => {
         const card = document.createElement("div");
@@ -30,5 +25,25 @@ function initPortfolio() {
             <a href="${project.link}" target="_blank" rel="noopener">View Project</a>
         `;
         projectsGrid.appendChild(card);
+    });
+}
+
+function initThemeToggle() {
+    const toggleBtn = document.getElementById("theme-toggle");
+    if (!toggleBtn) return;
+
+    const savedTheme = localStorage.getItem("theme");
+    if (savedTheme === "light") {
+        document.body.classList.add("light-theme");
+    }
+
+    toggleBtn.addEventListener("click", () => {
+        document.body.classList.toggle("light-theme");
+        
+        if (document.body.classList.contains("light-theme")) {
+            localStorage.setItem("theme", "light");
+        } else {
+            localStorage.setItem("theme", "dark");
+        }
     });
 }
