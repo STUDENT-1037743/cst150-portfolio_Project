@@ -1,10 +1,18 @@
 /* css/style.css */
 
 :root {
-    --bg-color: #121212;
-    --text-color: #f5f5f5;
-    --accent-color: #00adb5;
-    --card-bg: #1e1e1e;
+    --bg-color: #0d0c10;       /* Deep Shadow Purple-Black */
+    --text-color: #f5f5f5;     /* Stark Light Text */
+    --accent-color: #9d4edd;   /* Revan's Purple Blade */
+    --card-bg: #18161e;        /* Dark Slate with a Purple Tint */
+}
+
+/* Light Mode Theme Variant */
+body.light-theme {
+    --bg-color: #f5f5f5;
+    --text-color: #0d0c10;
+    --accent-color: #5a189a;   /* Darker purple for light mode contrast */
+    --card-bg: #ffffff;
 }
 
 body {
@@ -13,6 +21,30 @@ body {
     font-family: system-ui, -apple-system, sans-serif;
     margin: 0;
     padding: 20px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Keeps header layout aligned horizontally */
+header nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+/* Fixes the giant theme icon button */
+#theme-toggle {
+    background: none;
+    border: none;
+    font-size: 24px;   
+    cursor: pointer;
+    padding: 10px;
+    z-index: 1000;
+}
+
+/* Sith Crimson Hover Effect for Links and Cards */
+a:hover {
+    color: #df0a0a;            /* Lightsaber Crimson on hover */
 }
 
 /* Responsive Grid System */
@@ -41,5 +73,10 @@ body {
     background: var(--card-bg);
     padding: 20px;
     border-radius: 8px;
-    border: 1px solid #333;
+    border: 1px solid #241f31; /* Subtle purple-tinted border */
+    transition: border-color 0.2s ease;
+}
+
+.project-card:hover {
+    border-color: #df0a0a;     /* Glows crimson when hovered */
 }
