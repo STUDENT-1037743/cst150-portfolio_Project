@@ -20,4 +20,4 @@ const portfoliodata = [
             tags: ["Responsive", "UX"],
             link: "#"
         },
-    ];
+    ]
