@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://github.com/STUDENT-1037743/cst150-portfolio_Project_2

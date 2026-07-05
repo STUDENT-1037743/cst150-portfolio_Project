@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Personal portfolio and CV showcasing front-end web development skills and projects.">
+    <title>Portfolio | Home</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <header>
+        <nav>
+            <div class="logo">Portfolio.</div>
+            <button id="theme-toggle" aria-label="Toggle Dark Mode">
+                <!-- Light Mode Icon(visible by default, hidden in dark mode) -->
+                 <img src="assets/images/light-mode.png" alt="Light Mode Icon" class="theme-icon light-mode-icon">
+                <!-- Dark Mode Icon(hidden by default, shown in dark mode) -->
+                 <img src="assets/images/dark-mode.png" alt="Dark Mode Icon" class="theme-icon dark-mode-icon">
+            </button>
+        </nav>
+    </header>
+
+    <main>
+        <section id="hero">
+            <h1 id="hero-name"></h1>
+            <p id="hero-title"></p>
+        </section>
+
+        <section id="skills">
+            <h2>Skills</h2>
+            <ul id="skills-list"></ul>
+        </section>
+
+        <section id="projects">
+            <h2>Featured Projects</h2>
+            <div id="projects-grid" class="grid-container"></div>
+        </section>
+    </main>
+
+    <script src="js/data.java"></script>
+    <script src="js/main.java"></script>
+</body>
+</html>
